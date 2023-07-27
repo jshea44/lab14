@@ -1,7 +1,5 @@
 'use strict';
 
-console.log('hello world!');
-
 let canvasElem = document.getElementById('chart')
 
 /* TODO:
