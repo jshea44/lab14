@@ -33,25 +33,26 @@ AppState.prototype.loadItems = function () {
   let productData = JSON.parse(rawData);
   // console.log(productData);
 
-  for (let i = 0; i < productData.length; i++){
-    let currentProduct = productData[i];
+  if (!productData) {
+    this.instantiateProducts();
 
-    let currentName = currentProduct.name;
-    let currentSource = currentProduct.source;
-    let currentTimesClicked = currentProduct.timesClicked;
-    let currentTimesShown = currentProduct.timesShown;
-    
-    if (currentName === 'sweep') {
-      this.allProducts.push(new Product(currentName, 'png', currentTimesClicked, currentTimesShown));
-    } else {
-      this.allProducts.push(new Product(currentName, 'jpg', currentTimesClicked, currentTimesShown));
+  } else {
+
+    for (let i = 0; i < productData.length; i++){
+      let currentProduct = productData[i];
+
+      let currentName = currentProduct.name;
+      let currentTimesClicked = currentProduct.timesClicked;
+      let currentTimesShown = currentProduct.timesShown;
+      
+      if (currentName === 'sweep') {
+        this.allProducts.push(new Product(currentName, 'png', currentTimesClicked, currentTimesShown));
+      } else {
+        this.allProducts.push(new Product(currentName, 'jpg', currentTimesClicked, currentTimesShown));
+      }
     }
+    console.log(this);
   }
-
-  console.log(this);
-
-  // this.instantiateProducts();
-
 }
 
 
