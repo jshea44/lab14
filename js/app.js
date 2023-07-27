@@ -29,7 +29,10 @@ AppState.prototype.saveToLocalStorage = function () {
 AppState.prototype.returnTimesClickedData = function () {
   let numTimesClickedArray = [];
 
-  numTimesClickedArray = [12, 19, 3, 5, 2, 3];
+  for (let i = 0; i < this.allProducts.length; i++){
+    let currentProduct = this.allProducts[i];
+    numTimesClickedArray.push(currentProduct.timesClicked);
+  }
 
   return numTimesClickedArray;
 }
@@ -37,7 +40,10 @@ AppState.prototype.returnTimesClickedData = function () {
 AppState.prototype.returnTimesSeenData = function () {
   let numTimesSeenArray = [];
 
-  numTimesSeenArray = [1, 9, 23, 1, 7, 6];
+  for (let i = 0; i < this.allProducts.length; i++){
+    let currentProduct = this.allProducts[i];
+    numTimesSeenArray.push(currentProduct.timesShown);
+  }
 
   return numTimesSeenArray;
 }
