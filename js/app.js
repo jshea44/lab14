@@ -26,6 +26,22 @@ AppState.prototype.saveToLocalStorage = function () {
   // console.log(valuesToStore);
 }
 
+AppState.prototype.returnTimesClickedData = function () {
+  let numTimesClickedArray = [];
+
+  numTimesClickedArray = [12, 19, 3, 5, 2, 3];
+
+  return numTimesClickedArray;
+}
+
+AppState.prototype.returnTimesSeenData = function () {
+  let numTimesSeenArray = [];
+
+  numTimesSeenArray = [1, 9, 23, 1, 7, 6];
+
+  return numTimesSeenArray;
+}
+
 AppState.prototype.loadItems = function () {
 
   // TODO: Update this instance method to retrieve data from local storage instead of creating new Products on each page load
@@ -51,7 +67,7 @@ AppState.prototype.loadItems = function () {
         this.allProducts.push(new Product(currentName, 'jpg', currentTimesClicked, currentTimesShown));
       }
     }
-    console.log(this);
+    // console.log(this);
   }
 }
 

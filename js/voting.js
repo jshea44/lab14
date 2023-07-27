@@ -10,7 +10,6 @@ let imgContainer = document.querySelector('section');
 
 let state = new AppState();
 state.loadItems();
-// console.log(AppState);
 
 function generateRandomProduct() {
   return Math.floor(Math.random() * state.allProducts.length);
