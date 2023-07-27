@@ -41,6 +41,7 @@ function handleImageClick(event) {
     if (imageClicked === state.allProducts[i].name) {
       state.allProducts[i].timesClicked++;
       votingRounds--;
+      state.saveToLocalStorage();
       renderProductImages();
     }
 
