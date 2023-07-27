@@ -16,14 +16,14 @@ let canvasElem = document.getElementById('chart')
 let state = new AppState();
 state.loadItems();
 
-// console.log(state.returnTimesClickedData());
+console.log(state.returnNamesArray());
 
 
 function renderChart() {
   new Chart(canvasElem, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: state.returnNamesArray(),
       datasets: [{
         label: '# of Times Seen',
         data: state.returnTimesClickedData(),

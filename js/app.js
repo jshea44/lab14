@@ -48,6 +48,17 @@ AppState.prototype.returnTimesSeenData = function () {
   return numTimesSeenArray;
 }
 
+AppState.prototype.returnNamesArray = function () {
+  let namesArray = [];
+
+  for (let i = 0; i < this.allProducts.length; i++) {
+    let currentProduct = this.allProducts[i];
+    namesArray.push(currentProduct.name);
+  }
+
+  return namesArray; 
+}
+
 AppState.prototype.loadItems = function () {
 
   // TODO: Update this instance method to retrieve data from local storage instead of creating new Products on each page load
